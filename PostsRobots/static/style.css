@@ -364,3 +364,39 @@ main {
     background-color: #d9ceb8; /* Bege mais escuro no hover */
     color: #1f2d1f; /* Verde mais escuro no hover */
 }
+
+.comments-section {
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.comment-box {
+    padding: 10px 0; /* Espaço interno para a borda */
+    border-bottom: 1px solid #ddd; /* Linha de separação */
+}
+
+.comment-box:last-child {
+    border-bottom: none; /* Remove a linha do último comentário */
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between; /* Nome e data lado a lado */
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-size: 1.1em;
+    color: #d9ceb8;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.comment-text {
+    font-size: 1em;
+    color: #d9ceb8;
+}
+
