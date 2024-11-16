@@ -1,6 +1,5 @@
 from django.db import models
-
-from django.db import models
+from django.contrib.auth import get_user_model
 
 class Posts(models.Model):
     STATUS_CHOICES = [
@@ -35,3 +34,22 @@ class Posts(models.Model):
 
     def __str__(self):
         return self.title
+    
+User = get_user_model()
+
+class Comment(models.Model):
+    author_name = models.CharField(max_length=100, blank=True, null=True, default="Anonymous")
+    post = models.ForeignKey(Posts, on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def save(self, *args, **kwargs):
+        if not self.author_name:
+            self.author_name = "Anonymous"
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.author_name or "Anonymous"} - {self.text[:30]}'
