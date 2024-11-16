@@ -3,12 +3,14 @@
 {% block title %}Categories{% endblock %}
 
 {% block content %}
-<h1>Categories</h1>
-<ul>
+<h1 class="category-title">Categories</h1>
+<ul class="category-list">
     {% for category in categories %}
-        <li>
-            <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a>
-            <p>{{ category.description }}</p>
+        <li class="category-item">
+            <a href="{% url 'category_detail' category.id %}" class="category-link">
+                {{ category.name }}
+            </a>
+            <p class="category-description">{{ category.description }}</p>
         </li>
     {% endfor %}
 </ul>
