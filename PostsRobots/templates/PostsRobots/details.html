@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Details{% endblock %}
+
+{% block content %}
+<div class="details-container">
+    <div class="details-header">
+        <h1>{{ post.title }}</h1>
+        <p><strong>Category:</strong> {{ post.get_category_display }}</p>
+        <p><strong>Status:</strong> {{ post.get_status_display }}</p>
+        <p><strong>Created on:</strong> {{ post.post_date }}</p>
+    </div>
+
+    <div class="details-image">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    </div>
+
+    <div class="trophies">
+        <p><span class="gold">🏅 Gold:</span> {{ post.gold_trophies }}</p>
+        <p><span class="silver">🥈 Silver:</span> {{ post.silver_trophies }}</p>
+        <p><span class="bronze">🥉 Bronze:</span> {{ post.bronze_trophies }}</p>
+    </div>
+
+    <div class="details-description">
+        <h2>Description</h2>
+        <p>{{ post.description }}</p>
+    </div>
+
+    <div class="details-actions">
+        <a href="{% url 'postupdate' post.id %}" class="btn btn-update">Update</a>
+        <a href="{% url 'delete' post.id %}" class="btn btn-delete">Delete</a>
+    </div>
+</div>
+{% endblock %}

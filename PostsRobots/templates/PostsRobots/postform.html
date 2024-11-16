@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Create/Update Post{% endblock %}
+
+{% block content %}  
+
+<div class="form-container">
+    <h1>{% if request.path == '/postcreate' %}Create Post{% else %}Update Post{% endif %}</h1>
+    
+    <form method="post" action="{% if request.method == 'POST' %}{% url 'postcreate' %}{% endif %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button class="btn btn-primary" type="submit">{% if request.path == '/postcreate' %}Create{% else %}Update{% endif %}</button> 
+    </form>
+</div>
+
+{% endblock content %}

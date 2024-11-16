@@ -1,0 +1,289 @@
+/* Geral */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(51, 75, 53, 0.9); /* Fundo verde com opacidade menor */
+    color: #f6eee1ff; /* Texto em beje */
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 75, 53, 0.8); /* Fundo verde com opacidade */
+    padding: 10px 3cm; /* Espaço de 3 cm nas laterais */
+    border-bottom: 2px solid #334b35ff; /* Linha de destaque */
+}
+
+/* Logo e Nome do Site */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 2em;
+    color: #f6eee1ff; /* Beje */
+    margin: 0;
+}
+
+/* Links de Navegação */
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaçamento maior entre os links */
+}
+
+.nav-link {
+    font-size: 1.2em;
+    color: #f6eee1ff; /* Beje */
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #334b35ff; /* Verde escuro no hover */
+    color: #fff; /* Texto branco no hover */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background-color: rgba(51, 75, 53, 0.8); /* Fundo verde mais claro para contraste */
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px; /* Largura máxima para conteúdo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main container */
+.details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    color: #f6eee1ff; /* Beige */
+}
+
+/* Estilo do container de posts */
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+}
+
+/* Estilo dos cards */
+.post-card {
+    background-color: #334b35ff; /* Fundo verde escuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho no hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Link da imagem */
+.post-link {
+    display: block;
+    text-decoration: none;
+}
+
+/* Imagem do post */
+.post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Título do post */
+.post-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #f6eee1ff; /* Beje */
+    margin: 10px 0;
+}
+
+/* Header */
+.details-header h1 {
+    font-size: 2em;
+    color: #f6eee1ff;
+    margin-bottom: 10px;
+}
+
+.details-header p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Image */
+.details-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Trophies */
+.trophies {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.trophies p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.trophies .gold {
+    color: gold;
+}
+
+.trophies .silver {
+    color: silver;
+}
+
+.trophies .bronze {
+    color: #cd7f32; /* Bronze */
+}
+
+/* Description */
+.details-description h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.details-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.details-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.details-actions .btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.details-actions .btn-update {
+    background-color: #2980b9; /* Blue */
+    color: #fff;
+}
+
+.details-actions .btn-update:hover {
+    background-color: #1c6ea4;
+}
+
+.details-actions .btn-delete {
+    background-color: #e74c3c; /* Red */
+    color: #fff;
+}
+
+.details-actions .btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Header Sticky */
+.sticky-header {
+    position: sticky; /* Fixa o header quando a página é rolada */
+    top: 0; /* Posição inicial do header */
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+    background-color: rgba(51, 75, 53, 0.9); /* Fundo com leve transparência */
+    padding: 10px 3cm; /* Espaçamento do conteúdo */
+    border-bottom: 2px solid #334b35ff; /* Linha de destaque */
+    transition: background-color 0.3s ease; /* Efeito suave ao rolar */
+}
+
+/* Container principal do formulário */
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #334b35ff; /* Verde escuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #f6eee1ff; /* Texto em bege */
+    font-size: 1.2em; /* Tamanho padrão do texto */
+}
+
+/* Título do formulário */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Tamanho maior para destaque */
+    color: #f6eee1ff; /* Título em bege */
+}
+
+/* Labels */
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.5em; /* Tamanho maior para labels */
+}
+
+/* Campos do formulário */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #2b3b2b; /* Verde mais escuro */
+    color: #f6eee1ff; /* Texto em bege */
+    font-size: 1.2em; /* Tamanho do texto */
+}
+
+.form-container input[type="file"] {
+    margin-top: 10px;
+}
+
+/* Botão */
+.form-container .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em; /* Botão maior */
+    color: #fff;
+    background-color: #2980b9; /* Azul */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn:hover {
+    background-color: #1c6ea4; /* Azul mais escuro */
+}
