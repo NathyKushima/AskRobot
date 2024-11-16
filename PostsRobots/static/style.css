@@ -336,11 +336,31 @@ main {
 
 /* Botão de cancelar (igual ao de Home) */
 .delete-container .btn-home {
-    background-color: #2980b9; /* Azul */
+    background-color: #f6eee1ff; /* Azul */
     border: none;
     margin-left: 10px;
 }
 
 .delete-container .btn-home:hover {
     background-color: #1c6ea4; /* Azul mais escuro */
+}
+
+.btn.btn-primary {
+    background-color: #f6eee1; /* Bege */
+    color: #334b35; /* Verde */
+    border: 2px solid #334b35; /* Borda verde */
+    font-family: 'Georgia', serif;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado para links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #d9ceb8; /* Bege mais escuro no hover */
+    color: #1f2d1f; /* Verde mais escuro no hover */
 }
