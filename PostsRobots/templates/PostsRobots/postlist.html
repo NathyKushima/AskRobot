@@ -5,7 +5,7 @@
 {% block content %}
 <h1>
     {% if category %}
-        Posts in Category: {{ category.name }}
+        Posts in Category: <span class="nav-links">{{ category.name }}</span>
     {% else %}
         Registered Robots
     {% endif %}

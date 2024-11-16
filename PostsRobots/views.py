@@ -52,7 +52,7 @@ def UpdateView(request, id):
     form = PostsForm(request.POST or None, request.FILES or None, instance=post)
     if form.is_valid():
         post = form.save(commit=False)
-        form.save_m2m()  # Salva as relações ManyToMany
+        form.save_m2m() 
         post.save()
 
         messages.success(request, 'O post foi atualizado com sucesso')
