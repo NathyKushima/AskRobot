@@ -5,12 +5,36 @@
 {% block content %}  
 
 <div class="form-container">
-    <h1>{% if request.path == '/postcreate' %}Create Post{% else %}Update Post{% endif %}</h1>
+    <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">
+        {% if request.path == '/postcreate' %}Create Post{% else %}Update Post{% endif %}
+    </h1>
     
     <form method="post" action="{% if request.method == 'POST' %}{% url 'postcreate' %}{% endif %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
-            {{ form.as_p }}
+            {{ form.title.label_tag }} <br>
+            {{ form.title }} <br><br>
+
+            {{ form.description.label_tag }} <br>
+            {{ form.description }} <br><br>
+
+            {{ form.gold_trophies.label_tag }} <br>
+            {{ form.gold_trophies }} <br><br>
+
+            {{ form.silver_trophies.label_tag }} <br>
+            {{ form.silver_trophies }} <br><br>
+
+            {{ form.bronze_trophies.label_tag }} <br>
+            {{ form.bronze_trophies }} <br><br>
+
+            {{ form.status.label_tag }} <br>
+            {{ form.status }} <br><br>
+            
+            <label for="id_categories">Categories:</label>
+            {{ form.categories }} <br><br>
+
+            {{ form.image.label_tag }} <br>
+            {{ form.image }} <br><br>
         </div>
         <button class="btn btn-primary" type="submit">{% if request.path == '/postcreate' %}Create{% else %}Update{% endif %}</button> 
     </form>

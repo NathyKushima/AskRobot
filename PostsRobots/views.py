@@ -11,8 +11,8 @@ def category_list_view(request):
 
 def category_detail_view(request, id):
     category = get_object_or_404(Category, id=id)
-    posts = category.posts.all()  # Obtém todos os posts dessa categoria
-    return render(request, 'PostsRobots/postlist.html', {'posts': posts, 'category': category})
+    posts = category.posts.all()
+    return render(request, 'PostsRobots/category_detail.html', {'category': category, 'posts': posts})
 
 def post_about(request):
     return render(request, 'PostsRobots/about.html')
@@ -37,8 +37,9 @@ def CreateView(request):
     if request.method == 'POST': 
         form = PostsForm(request.POST, request.FILES) 
         if form.is_valid(): 
-            form = form.save(commit=False)
-            form.save() 
+            post = form.save(commit=False)
+            form.save_m2m() 
+            post.save()
             
             messages.success(request, 'O post foi criado com sucesso') 
             return HttpResponseRedirect(reverse('postlist')) 
@@ -50,7 +51,9 @@ def UpdateView(request, id):
     post = get_object_or_404(Posts, id=id)
     form = PostsForm(request.POST or None, request.FILES or None, instance=post)
     if form.is_valid():
-        form.save()
+        post = form.save(commit=False)
+        form.save_m2m()  # Salva as relações ManyToMany
+        post.save()
 
         messages.success(request, 'O post foi atualizado com sucesso')
         return HttpResponseRedirect(reverse('details', args=[post.id]))

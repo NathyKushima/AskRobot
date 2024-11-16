@@ -5,6 +5,9 @@ class PostsForm(forms.ModelForm):
     class Meta:
         model = Posts
         fields = ['title', 'categories', 'gold_trophies', 'silver_trophies', 'bronze_trophies', 'status', 'description', 'image']
+        widgets = {
+            'categories': forms.CheckboxSelectMultiple(),
+        }
 
 class CommentForm(forms.ModelForm):
     class Meta:
