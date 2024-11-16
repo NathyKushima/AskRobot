@@ -287,3 +287,60 @@ main {
 .form-container .btn:hover {
     background-color: #1c6ea4; /* Azul mais escuro */
 }
+
+/* Container do formulário de exclusão */
+.delete-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #334b35ff; /* Fundo verde escuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: #f6eee1ff; /* Texto em bege */
+}
+
+/* Título e texto */
+.delete-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f6eee1ff; /* Texto em bege */
+}
+
+.delete-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #f6eee1ff;
+}
+
+/* Botões */
+.delete-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão de deletar */
+.delete-container .btn-danger {
+    background-color: #c0392b; /* Vermelho */
+    border: none;
+}
+
+.delete-container .btn-danger:hover {
+    background-color: #a93226; /* Vermelho mais escuro */
+}
+
+/* Botão de cancelar (igual ao de Home) */
+.delete-container .btn-home {
+    background-color: #2980b9; /* Azul */
+    border: none;
+    margin-left: 10px;
+}
+
+.delete-container .btn-home:hover {
+    background-color: #1c6ea4; /* Azul mais escuro */
+}
