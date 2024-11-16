@@ -2,8 +2,17 @@ from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from .models import Posts
-from .forms import PostsForm
+from .models import Posts, Comment, Category
+from .forms import PostsForm, CommentForm
+
+def category_list_view(request):
+    categories = Category.objects.all()
+    return render(request, 'PostsRobots/category_list.html', {'categories': categories})
+
+def category_detail_view(request, id):
+    category = get_object_or_404(Category, id=id)
+    posts = category.posts.all()  # Obtém todos os posts dessa categoria
+    return render(request, 'PostsRobots/postlist.html', {'posts': posts, 'category': category})
 
 def post_about(request):
     return render(request, 'PostsRobots/about.html')
@@ -55,3 +64,28 @@ def DeleteView(request, id):
         messages.success(request, 'O post foi deletado com sucesso')
         return HttpResponseRedirect(reverse('postlist'))
     return render(request, 'PostsRobots/delete.html')
+
+def DetailView(request, id):
+    template_name = 'PostsRobots/details.html'
+    post = get_object_or_404(Posts, id=id)
+    comments = post.comments.all()
+    context = {
+        'post': post,
+        'comments': comments
+    }
+    return render(request, template_name, context)
+
+def add_comment(request, id):
+    post = get_object_or_404(Posts, id=id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            if not comment.author_name:
+                comment.author_name = "Anonymous"
+            comment.post = post
+            comment.save()
+            return HttpResponseRedirect(reverse('details', args=[id]))
+    else:
+        form = CommentForm()
+    return render(request, 'PostsRobots/comment_form.html', {'form': form, 'post': post})

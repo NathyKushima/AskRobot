@@ -6,10 +6,16 @@
 <div class="details-container">
     <div class="details-header">
         <h1>{{ post.title }}</h1>
-        <p><strong>Category:</strong> {{ post.get_category_display }}</p>
         <p><strong>Status:</strong> {{ post.get_status_display }}</p>
         <p><strong>Created on:</strong> {{ post.post_date }}</p>
     </div>
+
+    <p><strong>Categories:</strong>
+        {% for category in post.categories.all %}
+            <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    
 
     <div class="details-image">
         <img src="{{ post.image.url }}" alt="{{ post.title }}">
@@ -31,4 +37,28 @@
         <a href="{% url 'delete' post.id %}" class="btn btn-delete">Delete</a>
     </div>
 </div>
+
+<div class="comments-section">
+    <h1>Comments</h1>
+    <ul>
+        {% for comment in comments %}
+            <li class="comment-box">
+                <div class="comment-header">
+                    <strong class="comment-author">
+                        {{ comment.author_name|default:"Anonymous" }}
+                    </strong>
+                    <span class="comment-date">{{ comment.created_at|date:"d M Y H:i" }}</span>
+                </div>
+                <p class="comment-text">{{ comment.text }}</p>
+            </li>
+        {% empty %}
+            <a class="no-comments">No comments yet. Be the first to comment!</a>
+        {% endfor %}
+    </ul>
+
+    <div class="add-comment-btn">
+        <a href="{% url 'add_comment' post.id %}" class="btn btn-primary">Add Comment</a>
+    </div>
+</div>
+
 {% endblock %}
