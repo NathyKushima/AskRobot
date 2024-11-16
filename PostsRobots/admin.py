@@ -1,10 +1,15 @@
 from django.contrib import admin
-from .models import Posts, Comment
+from .models import Posts, Comment, Category
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
 
 @admin.register(Posts)
 class PostsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'post_date', 'status')
-    list_filter = ('category', 'status')
+    list_display = ('title', 'post_date', 'status')
+    list_filter = ('categories', 'status')
     search_fields = ('title', 'description')
 
 @admin.register(Comment)

@@ -1,23 +1,21 @@
-/* Geral */
+
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
-    background-color: rgba(51, 75, 53, 0.9); /* Fundo verde com opacidade menor */
-    color: #f6eee1ff; /* Texto em beje */
+    background-color: rgba(51, 75, 53, 0.9);
+    color: #f6eee1ff; 
 }
 
-/* Header */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(51, 75, 53, 0.8); /* Fundo verde com opacidade */
-    padding: 10px 3cm; /* Espaço de 3 cm nas laterais */
-    border-bottom: 2px solid #334b35ff; /* Linha de destaque */
+    background-color: rgba(51, 75, 53, 0.8); 
+    padding: 10px 3cm; 
+    border-bottom: 2px solid #334b35ff; 
 }
 
-/* Logo e Nome do Site */
 .logo-container {
     display: flex;
     align-items: center;
@@ -31,19 +29,18 @@ body {
 
 .site-name {
     font-size: 2em;
-    color: #f6eee1ff; /* Beje */
+    color: #f6eee1ff; 
     margin: 0;
 }
 
-/* Links de Navegação */
 .nav-links {
     display: flex;
-    gap: 20px; /* Espaçamento maior entre os links */
+    gap: 20px; 
 }
 
 .nav-link {
     font-size: 1.2em;
-    color: #f6eee1ff; /* Beje */
+    color: #f6eee1ff;
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 4px;
@@ -51,41 +48,37 @@ body {
 }
 
 .nav-link:hover {
-    background-color: #334b35ff; /* Verde escuro no hover */
-    color: #fff; /* Texto branco no hover */
+    background-color: #334b35ff; 
+    color: #fff; 
 }
 
-/* Main Content */
 main {
     padding: 20px;
-    background-color: rgba(51, 75, 53, 0.8); /* Fundo verde mais claro para contraste */
+    background-color: rgba(51, 75, 53, 0.8); 
     border-radius: 8px;
     margin: 20px auto;
-    max-width: 1200px; /* Largura máxima para conteúdo */
+    max-width: 1200px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Main container */
 .details-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    color: #f6eee1ff; /* Beige */
+    color: #f6eee1ff;
 }
 
-/* Estilo do container de posts */
 .post-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espaçamento entre os cards */
+    gap: 20px; 
     padding: 20px;
 }
 
-/* Estilo dos cards */
 .post-card {
-    background-color: #334b35ff; /* Fundo verde escuro */
+    background-color: #334b35ff; 
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -95,32 +88,28 @@ main {
 }
 
 .post-card:hover {
-    transform: scale(1.05); /* Aumenta o tamanho no hover */
+    transform: scale(1.05); 
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Link da imagem */
 .post-link {
     display: block;
     text-decoration: none;
 }
 
-/* Imagem do post */
 .post-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Título do post */
 .post-title {
     font-size: 1em;
     font-weight: bold;
-    color: #f6eee1ff; /* Beje */
+    color: #f6eee1ff; 
     margin: 10px 0;
 }
 
-/* Header */
 .details-header h1 {
     font-size: 2em;
     color: #f6eee1ff;
@@ -132,7 +121,6 @@ main {
     margin: 5px 0;
 }
 
-/* Image */
 .details-image img {
     display: block;
     max-width: 100%;
@@ -142,7 +130,6 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Trophies */
 .trophies {
     display: flex;
     justify-content: space-around;
@@ -164,10 +151,9 @@ main {
 }
 
 .trophies .bronze {
-    color: #cd7f32; /* Bronze */
+    color: #cd7f32;
 }
 
-/* Description */
 .details-description h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -179,7 +165,6 @@ main {
     line-height: 1.6;
 }
 
-/* Buttons */
 .details-actions {
     display: flex;
     justify-content: flex-end;
@@ -197,7 +182,7 @@ main {
 }
 
 .details-actions .btn-update {
-    background-color: #2980b9; /* Blue */
+    background-color: #2980b9; 
     color: #fff;
 }
 
@@ -206,7 +191,7 @@ main {
 }
 
 .details-actions .btn-delete {
-    background-color: #e74c3c; /* Red */
+    background-color: #e74c3c; 
     color: #fff;
 }
 
@@ -214,46 +199,41 @@ main {
     background-color: #c0392b;
 }
 
-/* Header Sticky */
 .sticky-header {
-    position: sticky; /* Fixa o header quando a página é rolada */
-    top: 0; /* Posição inicial do header */
-    z-index: 1000; /* Garante que o header fique acima de outros elementos */
-    background-color: rgba(51, 75, 53, 0.9); /* Fundo com leve transparência */
-    padding: 10px 3cm; /* Espaçamento do conteúdo */
-    border-bottom: 2px solid #334b35ff; /* Linha de destaque */
-    transition: background-color 0.3s ease; /* Efeito suave ao rolar */
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+    background-color: rgba(51, 75, 53, 0.9); 
+    padding: 10px 3cm; 
+    border-bottom: 2px solid #334b35ff;
+    transition: background-color 0.3s ease; 
 }
 
-/* Container principal do formulário */
 .form-container {
     max-width: 600px;
     margin: 30px auto;
-    background-color: #334b35ff; /* Verde escuro */
+    background-color: #334b35ff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #f6eee1ff; /* Texto em bege */
-    font-size: 1.2em; /* Tamanho padrão do texto */
+    color: #f6eee1ff; 
+    font-size: 1.2em; 
 }
 
-/* Título do formulário */
 .form-container h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2.5em; /* Tamanho maior para destaque */
-    color: #f6eee1ff; /* Título em bege */
+    font-size: 2.5em; 
+    color: #f6eee1ff;
 }
 
-/* Labels */
 .form-container label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    font-size: 1.5em; /* Tamanho maior para labels */
+    font-size: 1.5em; 
 }
 
-/* Campos do formulário */
 .form-container input[type="text"],
 .form-container input[type="number"],
 .form-container textarea,
@@ -262,22 +242,21 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #2b3b2b; /* Verde mais escuro */
-    color: #f6eee1ff; /* Texto em bege */
-    font-size: 1.2em; /* Tamanho do texto */
+    background-color: #2b3b2b;
+    color: #f6eee1ff; 
+    font-size: 1.2em; 
 }
 
 .form-container input[type="file"] {
     margin-top: 10px;
 }
 
-/* Botão */
 .form-container .btn {
     width: 100%;
     padding: 15px;
-    font-size: 1.5em; /* Botão maior */
+    font-size: 1.5em;
     color: #fff;
-    background-color: #2980b9; /* Azul */
+    background-color: #2980b9; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -285,26 +264,24 @@ main {
 }
 
 .form-container .btn:hover {
-    background-color: #1c6ea4; /* Azul mais escuro */
+    background-color: #1c6ea4;
 }
 
-/* Container do formulário de exclusão */
 .delete-container {
     max-width: 600px;
     margin: 50px auto;
     text-align: center;
-    background-color: #334b35ff; /* Fundo verde escuro */
+    background-color: #334b35ff; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    color: #f6eee1ff; /* Texto em bege */
+    color: #f6eee1ff; 
 }
 
-/* Título e texto */
 .delete-container h1 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #f6eee1ff; /* Texto em bege */
+    color: #f6eee1ff;
 }
 
 .delete-container p {
@@ -313,7 +290,6 @@ main {
     color: #f6eee1ff;
 }
 
-/* Botões */
 .delete-container .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -324,31 +300,29 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* Botão de deletar */
 .delete-container .btn-danger {
-    background-color: #c0392b; /* Vermelho */
+    background-color: #c0392b;
     border: none;
 }
 
 .delete-container .btn-danger:hover {
-    background-color: #a93226; /* Vermelho mais escuro */
+    background-color: #a93226; 
 }
 
-/* Botão de cancelar (igual ao de Home) */
 .delete-container .btn-home {
-    background-color: #f6eee1ff; /* Azul */
+    background-color: #f6eee1ff; 
     border: none;
     margin-left: 10px;
 }
 
 .delete-container .btn-home:hover {
-    background-color: #1c6ea4; /* Azul mais escuro */
+    background-color: #1c6ea4; 
 }
 
 .btn.btn-primary {
-    background-color: #f6eee1; /* Bege */
-    color: #334b35; /* Verde */
-    border: 2px solid #334b35; /* Borda verde */
+    background-color: #f6eee1;
+    color: #334b35; 
+    border: 2px solid #334b35;
     font-family: 'Georgia', serif;
     padding: 10px 20px;
     font-size: 1em;
@@ -356,13 +330,13 @@ main {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none; /* Remove sublinhado para links */
+    text-decoration: none; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn.btn-primary:hover {
-    background-color: #d9ceb8; /* Bege mais escuro no hover */
-    color: #1f2d1f; /* Verde mais escuro no hover */
+    background-color: #d9ceb8; 
+    color: #1f2d1f; 
 }
 
 .comments-section {
@@ -371,17 +345,17 @@ main {
 }
 
 .comment-box {
-    padding: 10px 0; /* Espaço interno para a borda */
-    border-bottom: 1px solid #ddd; /* Linha de separação */
+    padding: 10px 0; 
+    border-bottom: 1px solid #ddd; 
 }
 
 .comment-box:last-child {
-    border-bottom: none; /* Remove a linha do último comentário */
+    border-bottom: none; 
 }
 
 .comment-header {
     display: flex;
-    justify-content: space-between; /* Nome e data lado a lado */
+    justify-content: space-between; 
     margin-bottom: 5px;
 }
 
@@ -400,3 +374,36 @@ main {
     color: #d9ceb8;
 }
 
+.category-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.category-item {
+    margin-bottom: 20px;
+}
+
+.category-link {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #d9ceb8;
+}
+
+.category-link:hover {
+    text-decoration: underline;
+    color: #9bb9da;
+}
+
+.category-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 5px;
+}

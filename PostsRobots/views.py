@@ -2,8 +2,17 @@ from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from .models import Posts, Comment
+from .models import Posts, Comment, Category
 from .forms import PostsForm, CommentForm
+
+def category_list_view(request):
+    categories = Category.objects.all()
+    return render(request, 'PostsRobots/category_list.html', {'categories': categories})
+
+def category_detail_view(request, id):
+    category = get_object_or_404(Category, id=id)
+    posts = category.posts.all()  # Obtém todos os posts dessa categoria
+    return render(request, 'PostsRobots/postlist.html', {'posts': posts, 'category': category})
 
 def post_about(request):
     return render(request, 'PostsRobots/about.html')
